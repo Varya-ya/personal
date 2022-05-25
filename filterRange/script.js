@@ -24,3 +24,15 @@ let requiredRange3 = filterByPrice(200, null);
 console.log(requiredRange1);
 console.log(requiredRange2);
 console.log(requiredRange3);
+
+courses.sort(function (a, b) {
+    if (a.prices[0] > b.prices[0]) {
+        return 1;
+    } else if (a.prices[0] < b.prices[0]) {
+        return -1;
+    } else {
+        return a.prices[1] - b.prices[1];
+    };
+});
+
+console.log(courses);
