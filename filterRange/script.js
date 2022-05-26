@@ -9,6 +9,7 @@ let courses = [
     { name: "Courses in France", prices: [null, null] },
 ];
 
+// Filter by price range function
 function filterByPrice(firstValue = null, secondValue = null) {
     if (secondValue == null) {
         return courses.filter(courses => (courses.prices[0] >= firstValue));
@@ -25,6 +26,7 @@ console.log(requiredRange1);
 console.log(requiredRange2);
 console.log(requiredRange3);
 
+// Sorting courses by price in ascending order
 courses.sort(function (a, b) {
     if (a.prices[0] > b.prices[0]) {
         return 1;
