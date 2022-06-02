@@ -12,7 +12,7 @@ class UI {
     // Create tr element
     const row = document.createElement('tr');
     // Insert cols
-    row.innerHTML = `
+      row.innerHTML = `
       <td>${vehicle.type}</td>
       <td>${vehicle.value}</td>
       <td>${vehicle.vin}</td>
@@ -80,6 +80,7 @@ class Store {
   }
 
   static addVehicle(vehicle) {
+
     const vehicles = Store.getVehicles();
 
     vehicles.push(vehicle);
@@ -87,11 +88,11 @@ class Store {
     localStorage.setItem('vehicles', JSON.stringify(vehicles));
   }
 
-  static removeVehicle(vin) {
+  static removeVehicle(id) {
     const vehicles = Store.getVehicles();
 
     vehicles.forEach(function(vehicle, index){
-     if(vehicle.vin === vin) {
+     if(vehicle.id === id) {
       vehicles.splice(index, 1);
      }
     });
@@ -123,7 +124,7 @@ document.getElementById('vehicle-form').addEventListener('submit', function(e){
     // Error alert
     ui.showAlert('Please fill in all fields', 'error');
   } else {
-    // Add book to list
+    // Add vehicle to list
     ui.addVehicleToList(vehicle);
 
     // Add to LS
