@@ -1,1 +1,0 @@
-"Template" takes info through XPath from "Calculations" (sheets "Input" and "Output")
