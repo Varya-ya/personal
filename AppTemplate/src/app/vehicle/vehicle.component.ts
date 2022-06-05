@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehicleComponent implements OnInit {
   vehicleCreationStatus = 'No vehicle was created!';
+  vehicleType = '';
 
   constructor() {
     
@@ -16,6 +17,10 @@ export class VehicleComponent implements OnInit {
   }
 
   onCreateVehicle() {
-    this.vehicleCreationStatus = 'Vehicle was created!'
+    this.vehicleCreationStatus = 'Vehicle #1. Vehicle Type is ' + this.vehicleType;
+  }
+
+  onVehicleType(event: Event) {
+    this.vehicleType = (<HTMLInputElement>event.target).value;
   }
 }

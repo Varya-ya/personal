@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
   styles: [`
 
    p {
-      padding: 20px;
+      padding: 5px;
       background-color: mistyrose;
       border: 1px solid red;
      }
