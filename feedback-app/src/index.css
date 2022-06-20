@@ -153,6 +153,8 @@ input {
     width: 100px;
     height: 40px;
     cursor: pointer;
+    text-align: center;
+    padding-top: 8px;
 }
 
 .btn-primary {
