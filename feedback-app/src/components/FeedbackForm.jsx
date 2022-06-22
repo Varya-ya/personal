@@ -10,11 +10,11 @@ function FeedbackForm({handleAdd}) {
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
 
-    const handleTextChange = (e) => {
-        if (text === '') {
+    const handleTextChange = ({ target: { value } }) => {
+        if (value === '') {
             setBtnDisabled(true)
             setMessage(null)
-        } else if (text !== '' && text.trim().length < 4) {
+        } else if (value !== '' && value.trim().length < 4) {
             setBtnDisabled(true)
             setMessage('Text must be at least 4 characters')
         } else {
@@ -22,7 +22,7 @@ function FeedbackForm({handleAdd}) {
             setMessage(null)
         };
 
-        setText(e.target.value)
+        setText(value)
     };
 
     const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ function FeedbackForm({handleAdd}) {
             }
 
             handleAdd(newFeedback)
-
+            // Reset to default state after submission
             setText('')
         }
     };
@@ -43,7 +43,7 @@ function FeedbackForm({handleAdd}) {
         <Card>
             <form onSubmit={handleSubmit}>
                 <h2>How would you rate your service with us?</h2>
-                <RatingSelect select={(rating)=>setRating(rating)}/>
+                <RatingSelect select={setRating} selected={rating} />
                 <div className='input-group'>
                     <input
                         onChange={handleTextChange}
