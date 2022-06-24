@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
+import FeedbackContext from '../context/FeedbackContext';
 
 // Input field for adding new review, when the review is added the field is cleaned up
-function FeedbackForm({handleAdd}) {
+function FeedbackForm() {
     const [text, setText] = useState('');
     const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
+
+    const { addFeedback } = useContext(FeedbackContext);
 
     const handleTextChange = ({ target: { value } }) => {
         if (value === '') {
@@ -33,7 +36,7 @@ function FeedbackForm({handleAdd}) {
                 rating
             }
 
-            handleAdd(newFeedback)
+            addFeedback(newFeedback)
             // Reset to default state after submission
             setText('')
         }

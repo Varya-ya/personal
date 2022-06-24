@@ -1,6 +1,7 @@
 import { FaQuestion } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+// Question sign on the bottom of the page
 function AboutIconLink() {
 
     return (

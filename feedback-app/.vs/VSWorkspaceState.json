@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\shared",
-    "\\src\\data"
+    "\\src\\context",
+    "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\components\\FeedbackList.jsx",
+  "SelectedNode": "\\src\\pages",
   "PreviewInSolutionExplorer": false
 }
