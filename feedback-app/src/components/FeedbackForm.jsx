@@ -11,7 +11,7 @@ function FeedbackForm() {
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
 
-    const { addFeedback, feedbackEdit } = useContext(FeedbackContext);
+    const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext);
 
     useEffect(() => {
         if (feedbackEdit.edit === true) {
@@ -46,15 +46,21 @@ function FeedbackForm() {
                 rating
             }
 
-            addFeedback(newFeedback)
+            if (feedbackEdit.edit === true) {
+                updateFeedback(feedbackEdit.item.id, newFeedback)
+            } else {
+                addFeedback(newFeedback)
+            }
+            
             // Reset to default state after submission
             setText('')
+            setRating(10)
         }
     };
 
     return (
         <Card>
-            <form onClick={handleSubmit}>
+            <form>
                 <h2>How would you rate your service with us?</h2>
                 <RatingSelect select={setRating} selected={rating} />
                 <div className='input-group'>
@@ -64,7 +70,9 @@ function FeedbackForm() {
                         placeholder='Write a review'
                         value={text}
                     />
-                    <Button type='submit' isDisabled={btnDisabled}>Send</Button>
+                    <div onClick={handleSubmit}>
+                        <Button type='submit' isDisabled={btnDisabled}>Send</Button>
+                    </div>
                 </div>
 
                 {message && <div className='message'>{message}</div>}
