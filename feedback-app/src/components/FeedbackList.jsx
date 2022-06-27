@@ -5,14 +5,14 @@ import FeedbackContext from '../context/FeedbackContext';
 
 // Show feedback list if there is any feedback item
 function FeedbackList() {
-    const { feedback } = useContext(FeedbackContext)
+    const { feedback, isLoading } = useContext(FeedbackContext)
 
-    if (!feedback || feedback.length === 0 ) {
+    if (!isLoading && (!feedback || feedback.length === 0) ) {
         return <p>No Feedback Yet</p>
     }
 
     // Mapping items to list
-    return (
+    return isLoading ? <h3>Loading...</h3> : (
         <div className='feedback-list'>
             <AnimatePresence>
                 {feedback.map((item) => (
