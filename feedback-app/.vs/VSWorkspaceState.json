@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\assets",
+    "\\src\\components\\shared",
     "\\src\\context",
     "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\components\\FeedbackList.jsx",
+  "SelectedNode": "\\src\\context\\FeedbackContext.js",
   "PreviewInSolutionExplorer": false
 }
