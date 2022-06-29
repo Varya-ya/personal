@@ -2,12 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\assets",
-    "\\src\\components\\shared",
     "\\src\\context",
     "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\context\\FeedbackContext.js",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
