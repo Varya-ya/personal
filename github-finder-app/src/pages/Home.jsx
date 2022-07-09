@@ -1,10 +1,11 @@
 import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
+import UserResults from '../components/users/UserResults';
 
 function Home() {
 
     return (
-        <div>
+        <>
             <Navbar />
 
             <div className='flex-1 px-2 mx-2'>
@@ -14,8 +15,8 @@ function Home() {
                     </Link>
                 </div>
             </div> 
-            <h1 className='text-6xl'>Welcome</h1>
-        </div>
+            <UserResults />
+        </>
      )
 }
 
